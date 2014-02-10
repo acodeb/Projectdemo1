@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="projectdemo1" default="compile" basedir="..//">
+	<property name="src" location="src"/>
+	<property name="build" location="build" />
+
+	<target name="init" depends="clean" description="create the directories">
+		<mkdir dir="${build}" />
+	</target>
+	
+    <target name="compile" depends="init" description="build project">
+    	<javac srcdir="${src}" destdir="${build}" includeantruntime="false" />
+    </target>
+
+    <target name="clean">
+    	<delete dir="${build}" />
+    </target>
+
+</project>
